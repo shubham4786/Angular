@@ -1,1 +1,14 @@
-<p>signup works!</p>
+<h1>signup works!</h1>
+
+<h2>User Name: {{displayName}}</h2>
+<input type="text" name="user" value="{{name}}" (input)="handleInput($event) ">
+<button (click)="getName()">Get Name</button>
+<button (click)="setName()">Set Name</button>
+
+<br><br>
+<hr>
+
+<h2>User Email : {{displayEmail}}</h2>
+<input type="eail" name="userEmail" value="{{email}}" #userEmail>
+<button (click)="getEmail(userEmail.value)">Get Email</button>
+<button (click)="setEmail(userEmail.value)">Set Email</button>
