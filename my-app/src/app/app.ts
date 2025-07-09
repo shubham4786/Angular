@@ -1,26 +1,14 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { Login } from './login/login';
-import { Counter } from './counter/counter';
-import { Signup } from './signup/signup';
+import { FormsModule } from '@angular/forms';
+import { ToDo } from './to-do/to-do';
+
 
 @Component({
   selector: 'app-root',
-  imports: [Counter],
+  imports: [FormsModule, ToDo],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  title = 'First Anguler App';
-  name = "Shubham";
-
-  handleclickedFuction() {
-    console.log("Function Called");
-    this.otherFunction()
-  }
-
-  otherFunction() {
-    console.log("Other Function");
-
-  }
+  name = ""
 }
