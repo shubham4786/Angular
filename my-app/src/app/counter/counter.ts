@@ -1,4 +1,5 @@
 import { Component, computed, effect, signal } from '@angular/core';
+import { count } from 'rxjs';
 
 @Component({
   selector: 'app-counter',
@@ -7,48 +8,27 @@ import { Component, computed, effect, signal } from '@angular/core';
   styleUrl: './counter.css'
 })
 export class Counter {
-  count = 0
-
-  newCount = signal(0)
+  count = signal(1)
+  displayHeading = signal(false)
 
   constructor() {
     effect(() => {
-      console.log(this.newCount());
-      console.log(this.z());
-      this.y.set(30)
-      console.log(this.z());
+      if (this.count() % 2 == 0) {
+        this.displayHeading.set(true)
+        // this.displayHeading = true
 
+        setTimeout(() => {
+          // this.displayHeading = false
+          this.displayHeading.set(false)
+        }, 1000)
+      } else {
+        // this.displayHeading = false
+        this.displayHeading.set(false)
+
+      }
     })
   }
-
-  x = signal(10)
-  y = signal(20)
-  z = computed(() => this.x() + this.y())
-
-
-
-  // handleIncrement() {
-  //   this.count += 1
-  // }
-
-  // handleReset() {
-  //   this.count = 0
-  // }
-
-  // handleDecrement() {
-  //   this.count -= 1
-  // }
-
-  handleCounter(val: string) {
-    if (val == 'plus') {
-      this.count += 1;
-    } else if (val == 'minus') {
-      if (this.count > 0) {
-
-        this.count -= 1;
-      }
-    } else {
-      this.count = 0;
-    }
+  updateCount() {
+    this.count.set(this.count() + 1)
   }
 }
