@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, computed, effect, signal } from '@angular/core';
 
 @Component({
   selector: 'app-counter',
@@ -8,6 +8,24 @@ import { Component } from '@angular/core';
 })
 export class Counter {
   count = 0
+
+  newCount = signal(0)
+
+  constructor() {
+    effect(() => {
+      console.log(this.newCount());
+      console.log(this.z());
+      this.y.set(30)
+      console.log(this.z());
+
+    })
+  }
+
+  x = signal(10)
+  y = signal(20)
+  z = computed(() => this.x() + this.y())
+
+
 
   // handleIncrement() {
   //   this.count += 1

@@ -4,3 +4,11 @@
 <button (click)="handleCounter('plus')">Increment</button>
 <button (click)="handleCounter('reset')">Reset</button>
 @if (count ) {<button (click)="handleCounter('minus')">Decrement</button>}
+
+
+
+<h1>New Counter</h1>
+
+<button (click)="newCount.set(newCount()-1)">Decrement</button>
+<h1>{{newCount()}}</h1>
+<button (click)="newCount.set(newCount()+1)">Increment</button>
