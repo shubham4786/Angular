@@ -3,4 +3,4 @@
 
 <button (click)="handleCounter('plus')">Increment</button>
 <button (click)="handleCounter('reset')">Reset</button>
-<button (click)="handleCounter('minus')">Decrement</button>
+@if (count ) {<button (click)="handleCounter('minus')">Decrement</button>}

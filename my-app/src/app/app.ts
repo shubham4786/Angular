@@ -6,7 +6,7 @@ import { Signup } from './signup/signup';
 
 @Component({
   selector: 'app-root',
-  imports: [Signup],
+  imports: [Counter],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
