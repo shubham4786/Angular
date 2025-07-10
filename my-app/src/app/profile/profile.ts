@@ -14,7 +14,9 @@ export class Profile {
   ngOnInit() {
     // this.userName = this.route.snapshot.paramMap.get('name')
 
-    this.route.queryParams.subscribe(params => { this.userName = params['name'] })
+    // this.route.queryParams.subscribe(params => { this.userName = params['name'] })
+
+    this.route.data.subscribe(data => { this.userName = data['name'] })
 
   }
 }

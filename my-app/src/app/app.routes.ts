@@ -11,7 +11,7 @@ export const routes: Routes = [
     { path: "login", component: Login },
     { path: "about", component: About },
     { path: "contact", component: Contact },
-    { path: "profile", component: Profile },
+    { path: "profile", component: Profile, data: { name: "Shubham" } },
     { path: '**', component: PageNotFound }
 
 ];
