@@ -9,9 +9,17 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class Home {
 
-  // constructor(private router: Router) { }
-
-  // goToProfile(name: string) {
-  //   this.router.navigate(['profile'], { queryParams: { name } })
-  // }
+  users = [{
+    id: 1,
+    name: "Sam"
+  }, {
+    id: 2,
+    name: "Ram"
+  }, {
+    id: 3,
+    name: "Jay"
+  }, {
+    id: 4,
+    name: "Shree"
+  },]
 }
