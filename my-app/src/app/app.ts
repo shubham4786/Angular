@@ -1,14 +1,16 @@
+
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { ToDo } from './to-do/to-do';
+import { RouterOutlet } from '@angular/router';
+import { Header } from "./header/header";
+
 
 
 @Component({
   selector: 'app-root',
-  imports: [FormsModule, ToDo],
+  imports: [RouterOutlet, Header],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  name = ""
+
 }
