@@ -1,11 +1,14 @@
 <h1>Login Form</h1>
 
-<form action="" method="post">
-    <input type="text" placeholder="Enter Name" [formControl]="name">
+<form [formGroup]="profileForm" (ngSubmit)="handleSubmit()">
+    <input type="text" placeholder="Enter Name" formControlName="name">
     <br>
     <br>
-    <input type="password" placeholder="Enter Password" [formControl]="password">
+    <input type="email" placeholder="Enter Email" formControlName="email">
     <br>
     <br>
-    <button type="button" (click)="displayValue()">Login</button>
+    <input type="password" placeholder="Enter Password" formControlName="password">
+    <br>
+    <br>
+    <button>Login</button>
 </form>
