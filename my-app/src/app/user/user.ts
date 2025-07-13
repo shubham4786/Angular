@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -8,10 +8,6 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './user.css'
 })
 export class User {
-  name: null | string = ''
-  constructor(private route: ActivatedRoute) { }
+  @Input() user: any = ''
 
-  ngOnInit() {
-    this.route.params.subscribe(data => { this.name = data['name'] })
-  }
 }

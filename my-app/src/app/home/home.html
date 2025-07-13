@@ -1,9 +1,4 @@
 <h1>home works!</h1>
-
-<h1>User List</h1>
-
-<ul>
-    @for (user of users; track user.id) {
-    <li><a routerLink="user/{{user.id}}/{{user.name}}">{{user.name}}</a></li>
-    }
-</ul>
+@for (user of users; track user.id) {
+<app-user [user]="user" />
+}

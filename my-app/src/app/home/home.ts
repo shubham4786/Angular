@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+
+import { User } from '../user/user';
 
 @Component({
   selector: 'app-home',
-  imports: [RouterLink],
+  imports: [User],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
