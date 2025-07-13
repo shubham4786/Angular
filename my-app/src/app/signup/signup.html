@@ -2,33 +2,34 @@
 
 <form #userForm="ngForm" (ngSubmit)="addDetails(userForm.value)">
     <span>Name: </span>
-    <input type="text" placeholder="Enter Name" name="name" ngModel>
+    <input type="text" placeholder="Enter Name" name="name" ngModel required #name="ngModel">
+    @if(name.invalid && name.touched){<span class="error"> Required</span>}
     <br>
     <br>
     <span>Email: </span>
-    <input type="email" placeholder="Enter Email" name="email" ngModel>
+    <input type="email" email="" placeholder="Enter Email" name="email" ngModel required #email="ngModel">
+    @if(email.invalid && email.touched){<span class="error"> Please Enter Valid Email</span>}
     <br>
     <br>
     <span>Password: </span>
-    <input type="password" placeholder="Enter Password" name="password" ngModel>
+    <input type="password" minlength="5" placeholder="Enter Password" name="password" ngModel required
+        #password="ngModel">
+    @if(password.invalid && password.touched){<span class="error"> Please Enter Valid Password</span>}
     <br>
     <br>
-    <select name="gender" ngModel>
+    <select #gender="ngModel" required name="gender" ngModel>
         <option value="">Select Gender</option>
         <option value="male">Male</option>
         <option value="female">Female</option>
     </select>
+    @if(gender.invalid && gender.touched){<span class="error"> Please Select Valid Gender</span>}
+    <br>
+    <br>
 
-    <br>
-    <br>
-    <input type="range" name="age" min="18" max="60" ngModel>
-    <br>
-    <br>
-    <button>Add user</button>
+    <button [disabled]="userForm.invalid">Add user</button>
 </form>
 
 <h3>{{userDetails.name}}</h3>
 <h3>{{userDetails.email}}</h3>
 <h3>{{userDetails.password}}</h3>
 <h3>{{userDetails.gender}}</h3>
-<h3>{{userDetails.age}}</h3>
