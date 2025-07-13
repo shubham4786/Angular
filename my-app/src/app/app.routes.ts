@@ -6,10 +6,12 @@ import { Home } from './home/home';
 import { PageNotFound } from './page-not-found/page-not-found';
 import { Profile } from './profile/profile';
 import { User } from './user/user';
+import { Signup } from './signup/signup';
 
 export const routes: Routes = [
     { path: "", component: Home },
     { path: "login", component: Login },
+    { path: 'signup', component: Signup },
     { path: "about", component: About },
     { path: "contact", component: Contact },
     { path: "profile", component: Profile, data: { name: "Shubham" } },
