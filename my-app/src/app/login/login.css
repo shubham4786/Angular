@@ -1,0 +1,12 @@
+input,
+button {
+    padding: 5px;
+}
+
+.required {
+    color: red;
+}
+
+.error {
+    color: red;
+}

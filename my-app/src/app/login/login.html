@@ -1,13 +1,23 @@
 <h1>Login Form</h1>
 
 <form [formGroup]="profileForm" (ngSubmit)="handleSubmit()">
+    <span>Name: </span>
     <input type="text" placeholder="Enter Name" formControlName="name">
+    @if(name?.hasError('required')){ <span class="required">* </span>}
+    @if(name?.invalid && (name?.dirty || name?.touched)){ <span class="error">Please Enter User Name</span>}
     <br>
     <br>
+    <span>Email: </span>
     <input type="email" placeholder="Enter Email" formControlName="email">
+    @if(email?.hasError('required')){ <span class="required">* </span>}
+    @if(email?.invalid && (email?.dirty || email?.touched)){ <span class="error">Please Enter Valid Email</span>}
     <br>
     <br>
+    <span>Password: </span>
     <input type="password" placeholder="Enter Password" formControlName="password">
+    @if(password?.hasError('required')){ <span class="required">* </span>}
+    @if(password?.invalid && (password?.dirty || password?.touched)){ <span class="error">Please Enter Valid
+        Password</span>}
     <br>
     <br>
     <button>Login</button>
