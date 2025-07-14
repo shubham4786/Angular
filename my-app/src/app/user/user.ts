@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -8,6 +8,24 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './user.css'
 })
 export class User {
-  @Input() user: any = ''
+  @Output() getUser = new EventEmitter()
 
+
+  users = [{
+    id: 1,
+    name: "Sam"
+  }, {
+    id: 2,
+    name: "Ram"
+  }, {
+    id: 3,
+    name: "Jay"
+  }, {
+    id: 4,
+    name: "Shree"
+  },]
+
+  dispyaData() {
+    this.getUser.emit(this.users)
+  }
 }

@@ -1,4 +1,7 @@
 <h1>home works!</h1>
-@for (user of users; track user.id) {
-<app-user [user]="user" />
+
+<app-user (getUser)="handleUsers($event)" />
+
+@for (user of users; track user?.id) {
+<h2>User Name: {{user?.name}}</h2>
 }

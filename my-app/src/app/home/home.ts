@@ -9,18 +9,10 @@ import { User } from '../user/user';
   styleUrl: './home.css'
 })
 export class Home {
+  users: undefined | any;
+  handleUsers(users: any) {
+    console.log(users);
+    this.users = users;
 
-  users = [{
-    id: 1,
-    name: "Sam"
-  }, {
-    id: 2,
-    name: "Ram"
-  }, {
-    id: 3,
-    name: "Jay"
-  }, {
-    id: 4,
-    name: "Shree"
-  },]
+  }
 }
